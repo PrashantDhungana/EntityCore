@@ -1,0 +1,19 @@
+﻿@model WebApplication3.Models.Student
+
+<form method="post" asp-action="Update">
+    <h2>Add New Item</h2>
+    <label asp-for="Firstname"></label>
+    <input asp-for="Firstname" type="text" class="form-control" />
+
+    <label asp-for="Lastname"></label>
+    <input asp-for="Lastname" type="text" class="form-control" />
+
+    <label asp-for="roll"></label>
+    <input asp-for="roll" type="number" class="form-control" min="1" />
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" type="text" class="form-control" />
+
+    <input type="submit" class="btn btn-info" value="Update" />
+    <a asp-action="Index" class="btn btn-warning">Go Back</a>
+</form>

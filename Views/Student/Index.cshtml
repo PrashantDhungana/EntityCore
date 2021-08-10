@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<WebApplication3.Models.Student>
+
+<a asp-action="Create" asp-controller="Student" class="btn btn-primary">Create New Entry</a>
+@if(Model.Count() > 0 )
+{
+
+                      <table class="table table-bordered table-striped">
+                          <tr>
+                              <td>Roll No.</td>
+                              <td>Name</td>
+                              <td>Address</td>
+                              <td colspan="2">Actions</td>    
+                          </tr>
+                          @foreach(var item in Model)
+                          {
+                      <tr>
+
+                          <td>@item.roll</td>
+                          <td>@item.Firstname @item.Lastname</td>
+                          <td>@item.Address</td>
+                          <td><a asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary">Update</a></td>
+
+                          
+                          <td><a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger" >Delete</a></td>
+                          
+                      </tr>
+
+                          }
+                      </table>
+}
